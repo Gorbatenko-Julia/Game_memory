@@ -1,0 +1,94 @@
+@font-face {
+    font-family: Foglihten;
+    src: url("./fonts/FoglihtenNo06_076.otf");
+}
+
+body {
+
+    background-color: #f0f0f0;
+    font-family:Foglihten, sans-serif;
+}
+
+.game-board {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-gap: 30px;
+}
+
+.card-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    transform-style: preserve-3d;
+    transition: transform 0.7s cubic-bezier(.2, .85, .35, 1);
+    cursor: pointer;
+}
+
+.card-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: 150px;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.front-face {
+
+    background-image: url("./images/free-icon-joker.png"); /* Обратная сторона карты */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.back-face {
+    transform: rotateY(180deg); /* Начальное положение спереди скрытой стороной */
+    box-shadow: #06063a 1px 1px 1px 1px;
+    background-color: #f0f0f0;
+    width: 100px;
+    margin-left: 20px;
+
+}
+
+.back-face img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.card-container.flipped {
+    transform: rotateY(180deg); /* Переводим на 180 градусов при активировании класса */
+}
+
+.popup-message {
+    display: none;
+    text-align: center;
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 100px;
+    background-color: white;
+    color: black;
+    font-size: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-button {
+    font-family: Foglihten, sans-serif;
+    margin-top: 30px;
+    font-size: 20px;
+    padding: 20px 20px;
+    background-color: #0404c3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
