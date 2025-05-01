@@ -79,10 +79,12 @@ function flipCard() {
 
     if (!firstCard) {
         firstCard = this;
+        audio.play();
         return;
     }
     if (!secondCard) {
         secondCard = this;
+        audio.play();
         lockBoard = true; // Блокируем доску
         setTimeout(() => {
             if (firstCard.dataset.name !== secondCard.dataset.name) {
@@ -95,6 +97,7 @@ function flipCard() {
         return;
     }
     thirdCard = this;
+    audio.play();
     lockBoard = true;//ждём пока откроются все три карты
     setTimeout(() => {
         checkForMatch(); // Проверка всех трёх карт
@@ -159,6 +162,7 @@ function resetBoard() {
     secondCard = null;
     thirdCard = null;
     lockBoard = false;
+    audio_2.play();
 }
 
 // Новая функция для проверки условий победы
@@ -191,6 +195,11 @@ function closeWinPopup() {
     const winMessage = document.getElementById('winMessage');
     winMessage.style.display = 'none';
 }
+
+let audio = new Audio('mb_card_deal_08.mp3');
+audio.play();
+let audio_2 = new Audio('audio_2.mp3');
+audio.play();
 
 
 

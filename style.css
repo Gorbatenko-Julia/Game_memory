@@ -4,12 +4,16 @@
 }
 
 body {
+    background-image: url("./images/version_3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 
-    background-color: #f0f0f0;
+    /*background-color: #f0f0f0;*/
     font-family:Foglihten, sans-serif;
 }
 
 .game-board {
+
     display: grid;
     justify-content: center;
     align-items: center;
